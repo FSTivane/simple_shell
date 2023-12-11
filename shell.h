@@ -31,7 +31,7 @@ typedef struct map
 {
 	char *command_name;
 	void (*func)(char 88command);
-}function_map;
+} function_map;
 
 extern char **environ;
 extern char *line;
