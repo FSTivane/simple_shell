@@ -1,8 +1,0 @@
-.TH SHELL 1 "DECEMBER, 2023" "ALX-Africa" "0x16"
-"1.01" "C - simple_shell - man page"
-
-.SH NAME
-.B simple_shell \- simple UNIX command interpreter made in C
-
-.SH NA
-.B simple_shell \- 
