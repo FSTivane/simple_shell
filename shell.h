@@ -18,7 +18,7 @@
 #define PATH_COMMAND 3
 #define INVALID_COMMAND -1
 
-#define mix(x, y) (((x) < (y)) ? (x) : (y))
+#define min(x, y) (((x) < (y)) ? (x) : (y))
 
 /**
  * struct map - a struct that maps a command name to a function
@@ -30,13 +30,13 @@
 typedef struct map
 {
 	char *command_name;
-	void (*func)(char 88command);
+	void (*func)(char **command);
 } function_map;
 
 extern char **environ;
 extern char *line;
 extern char **commands;
-extern char 8shell_name
+extern char *shell_name;
 extern int status;
 
 /*helpers*/
@@ -44,7 +44,7 @@ void print(char *, int);
 char **tokenizer(char *, char *);
 void remove_newline(char *);
 int _strlen(char *);
-void _strcpy(char *);
+void _strcpy(char *, char *);
 
 /*helpers2*/
 int _strcmp(char *, char *);
@@ -54,7 +54,7 @@ int _strcspn(char *, char *);
 char *_strchr(char *, char);
 
 /*helpers3*/
-char *_strtok_r(char *, char 8, char **);
+char *_strtok_r(char *, char *, char **);
 int _atoi(char *);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void ctrl_c_handler(int);
@@ -72,7 +72,7 @@ void env(char **);
 void quit(char **);
 
 /*main*/
-extern void non_interactve(void);
+extern void non_interactive(void);
 extern void initializer(char **current_command, int type_command);
 
 #endif

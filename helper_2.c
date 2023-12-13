@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _strtok_r _tokenizes a string
+ * _strtok_r - tokenizes a string
  * @string: string to be tokenized
  * @delim: delimer to be used to tokenize the string
  * @save_ptr: pointer to be used to keep track of the next token
@@ -12,7 +12,7 @@ char *_strtok_r(char *string, char *delim, char **save_ptr)
 {
 	char *finish;
 
-	if (string ==NULL)
+	if (string == NULL)
 		string = *save_ptr;
 	if (*string == '\0')
 	{

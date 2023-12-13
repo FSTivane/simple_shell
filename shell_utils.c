@@ -37,7 +37,7 @@ int parse_command(char *command)
 		return (PATH_COMMAND);
 	}
 
-	return (INVALID COMMAND);
+	return (INVALID_COMMAND);
 }
 
 /**
@@ -54,7 +54,7 @@ void execute_command(char **tokenized_command, int command_type)
 
 	if (command_type == EXTERNAL_COMMAND)
 	{
-		if (execve(tokenized_command[0], tokenized_command. NULL) == -1
+		if (execve(tokenized_command[0], tokenized_command, NULL) == -1)
 		{
 			perror(_getenv("PWD"));
 			exit(2);
@@ -63,7 +63,7 @@ void execute_command(char **tokenized_command, int command_type)
 
 	if (command_type == INTERNAL_COMMAND)
 	{
-		func = get_func(tokenized_commanad[0]);
+		func = get_func(tokenized_command[0]);
 		func(tokenized_command);
 	}
 
